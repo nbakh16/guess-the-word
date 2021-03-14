@@ -1,11 +1,13 @@
 import random
 
+
 def guesstheword():
 
     word_list = ["bangladesh", "apple", "camel", "nice", "pleasure", "courage", "different", "mobile", "marvel", "universe"]
     selected_word = random.choice(word_list)
     lives = 3
-    print("your life: " + str(lives))
+    print("****Guess the Word game****\n\nTry to guess the given word. First letter is solved for you.\nGuess wisely, you can't do mistake more than 3 times. Good luck!\n\n"
+        + "your life: " + str(lives) + "\n")
 
     display = [selected_word[0]]
 
@@ -43,7 +45,7 @@ def guesstheword():
             if lives == 3:
                 print("***Looks like someone's on Fire!***\nGreat WIN.")
             else:
-                print("----You've WON!----")
+                print("\n----You've WON!----")
 
 while True:
     guesstheword()
