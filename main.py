@@ -9,25 +9,25 @@ def guesstheword():
 
     display = [selected_word[0]]
 
-	#create display list with "_"
+    #create display list with "_"
     for i in range(len(selected_word)-1):
         display.append("_")
     print(display)
 
     gameover = False
 
-	#loop until gameover=True
+    #loop until gameover=True
     while not gameover:
         guess = input("guess a letter: ").lower() #taking input in lowercase
 
-		#checking if guessed letter is correct or not
+        #checking if guessed letter is correct or not
 		#if correct put letter in it's position of the word.
         for position in range(len(selected_word)):
             letter = selected_word[position]
             if letter == guess:
                 display[position] = letter
 
-		#if guessed letter is wrong deduct a life
+        #if guessed letter is wrong deduct a life
         if guess not in selected_word:
             lives -= 1
             print("Try again\n  Remaining life: " + str(lives))
@@ -37,7 +37,7 @@ def guesstheword():
 
         print(display)
 
-		#checking if all "_" filled wiht letters
+        #checking if all "_" filled wiht letters
         if "_" not in display:
             gameover = True
             if lives == 3:
